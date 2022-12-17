@@ -8,6 +8,9 @@ packages = [{include = "talk_booking"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+uvicorn = "^0.20.0"
+fastapi = "^0.88.0"
+httpx = "^0.23.1"
 
 
 [tool.poetry.group.dev.dependencies]
