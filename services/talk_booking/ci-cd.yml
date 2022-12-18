@@ -18,11 +18,9 @@ service-talk-booking-tests:
     - cd services/talk_booking
     - poetry install --no-root
   script:
-    - poetry run pytest --junitxml=report.xml --cov=./ --cov-report=xml tests/unit tests/integration
+    - poetry run python -m pytest --junitxml=report.xml --cov=./ --cov-report=xml tests/unit tests/integration
   after_script:
-    - curl -Os https://uploader.codecov.io/latest/linux/codecov
-    - chmod +x codecov
-    - ./codecov -t ${CODECOV_TOKEN} -R
+    - bash <(curl -s https://codecov.io/bash)
   artifacts:
     when: always
     reports:
