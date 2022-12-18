@@ -3,7 +3,7 @@ service-talk-booking-code-quality:
   image: registry.gitlab.com/carltonlnd/talk-booking:cicd-python3.10-slim
   before_script:
     - cd services/talk_booking
-    - poetry install
+    - poetry install --no-root
   script:
     - poetry run flake8 .
     - poetry run black . --check
