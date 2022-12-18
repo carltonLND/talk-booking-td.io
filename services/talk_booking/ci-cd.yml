@@ -10,6 +10,12 @@ service-talk-booking-code-quality:
     - poetry run isort . --check-only --profile black
     - poetry run bandit .
     - poetry run safety check
+  only:
+    refs:
+      - main
+      - merge_requests
+    changes:
+      - services/talk_booking/**/*
 
 service-talk-booking-tests:
   stage: test
@@ -25,3 +31,9 @@ service-talk-booking-tests:
     when: always
     reports:
       junit: services/talk_booking/report.xml
+  only:
+    refs:
+      - main
+      - merge_requests
+    changes:
+      - services/talk_booking/**/*
