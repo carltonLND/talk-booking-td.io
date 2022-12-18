@@ -16,7 +16,7 @@ service-talk-booking-tests:
   image: registry.gitlab.com/carltonlnd/talk-booking:cicd-python3.10-slim
   before_script:
     - cd services/talk_booking
-    - poetry install
+    - poetry install --no-root
   script:
     - poetry run pytest --junitxml=report.xml --cov=./ --cov-report=xml tests/unit tests/integration
   after_script:
