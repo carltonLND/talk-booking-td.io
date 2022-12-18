@@ -15,6 +15,6 @@ def test_health_check(client):
     WHEN health check enpoint is called with GET method
     THEN response with status 200 and body OK is returned
     """
-    response = client.get('/health-check/')
+    response = client.get("/health-check/")
     assert response.status_code == 200
-    assert response.json() == {'message': 'OK'}
+    assert response.json() == {"message": "OK"}
