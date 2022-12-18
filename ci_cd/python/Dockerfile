@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.10-slim
 RUN mkdir -p /home/gitlab && addgroup gitlab && useradd -d /home/gitlab -g gitlab gitlab && chown gitlab:gitlab /home/gitlab
 RUN apt-get update && apt-get install -y curl
 USER gitlab
